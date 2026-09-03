@@ -5,7 +5,7 @@ class average_pooling:
         self.stride=stride
         self.pool=pool_size
     
-    def average_pooing(self,x:np.array):
+    def forward(self,x:np.array):
         batch,n_fiters,height,width=x.shape
         output_height=((height-self.pool)//self.stride) + 1
         output_width=((width-self.pool) // self.stride) + 1

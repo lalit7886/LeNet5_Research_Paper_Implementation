@@ -8,6 +8,18 @@ class Linear_layer:
         self.bias=np.zeros((n_neurons,1))
         
     def forward(self,x):
+        self.x=x
         return x @ self.weight + self.bias.T
+    
+    
+    def backward(self,d_upstream):
+        self.d_wieghts=self.x.T @ d_upstream
+        self.b_bias=np.sum(d_upstream,axis=0,keepdims=True).T
+        d_input=d_upstream @ self.d_weights.T
+        return d_input
+    
+        
+        
+        
         
         

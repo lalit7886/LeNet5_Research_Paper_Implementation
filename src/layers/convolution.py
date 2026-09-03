@@ -8,6 +8,7 @@ class Conv2D:
             self.kernel_size=kernel_size
 
     def forward(self,x):
+        "shape of output is (batch, output, filter , filter)"
         batch_size,channel,height,width=x.shape
         output=np.zeros((batch_size,self.out_channels,height-self.kernel_size+1,width-self.kernel_size+1))
         for id,batch in enumerate(x):
@@ -17,6 +18,8 @@ class Conv2D:
                         output[id][out_][height_][width_]=np.sum(filter*batch[:,height_:height_+self.kernel_size,width_:width+self.kernel_size
                                                                         ])+self.bias[out_][0]
         return output
+    
+    
     
     
                 
