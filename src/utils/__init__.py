@@ -13,6 +13,11 @@ def batch_(batch_size,dataset,labels,shuffle=True):
     for i in range(0,num_samples,batch_size):
         yield dataset[i:i+batch_size,...],labels[i:i+batch_size]
         
+def one_hot(labels, num_classes=10):
+    encoded = np.zeros((labels.shape[0], num_classes))
+    encoded[np.arange(labels.shape[0]), labels] = 1
+    return encoded
+        
 class flatten:
     def __init__(self,batched=True):
         self.original_shape=None

@@ -36,8 +36,8 @@ class average_pooling:
             for filter_id, filter in enumerate(batch):
                 for height in range(filter.shape[0]):
                     for width in range(filter.shape[1]):
-                        start_h=height*stride
-                        start_w=width*stride
+                        start_h=height*self.stride
+                        start_w=width*self.stride
                         output_[batch_id,filter_id,start_h:start_h+self.pool,start_w:start_w+self.pool]=0.25*d_out[batch_id][filter_id][height][width]
         
         return output_

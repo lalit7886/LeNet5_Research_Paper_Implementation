@@ -1,4 +1,5 @@
 import numpy as np
+from src.utils import one_hot
 
 class tanh:
     def __init__(self):
@@ -24,5 +25,6 @@ class softmax:
     
     def backward(self,y_actual):
         batch_size=y_actual.shape[0]
+        y_actual=one_hot(y_actual,10)
         return (self.output-y_actual)/batch_size
         

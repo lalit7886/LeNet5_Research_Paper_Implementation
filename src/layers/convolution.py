@@ -1,6 +1,6 @@
 import numpy as np
 class Conv2D:
-    def __init__(self, out_channels=6, in_channels=1, kernel_size=3):
+    def __init__(self, out_channels=6, in_channels=1, kernel_size=5):
         self.weights = np.random.randn(
             out_channels, in_channels, kernel_size, kernel_size
         )
