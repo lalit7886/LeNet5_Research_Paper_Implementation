@@ -24,7 +24,7 @@ class flatten:
             batch_size=x.shape[0]
             return x.reshape(batch_size,-1)
         else:
-            return x.reshape[-1]
+            return x.reshape(-1)
     def backward(self,x):
         return x.reshape(self.original_shape)
     

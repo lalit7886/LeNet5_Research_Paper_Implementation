@@ -101,7 +101,7 @@ class Conv2D:
         self.dw_weights = dw_weights
         self.dw_bias = dw_bias
 
-        return dw_input, dw_weights, dw_bias
+        return dw_input
 
 
 if __name__ == "__main__":
